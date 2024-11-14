@@ -66,7 +66,7 @@ if [ -f /sys/fs/cgroup/cgroup.controllers ]; then
 	# enable controllers
 	true > /sys/fs/cgroup/cgroup.subtree_control
 	while IFS= read -r line; do
-		echo "$line" | sed -e 's/ / +/g' -e 's/^/+/' >> /sys/fs/cgroup/cgroup.subtree_control || :
+		echo "$line" | sed -e 's/ / +/g' -e 's/^/+/' >> /sys/fs/cgroup/cgroup.subtree_control
 	done < /sys/fs/cgroup/cgroup.controllers
 fi
 
